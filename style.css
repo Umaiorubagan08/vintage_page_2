@@ -302,7 +302,7 @@ body {
     background: white;
     padding: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
@@ -434,6 +434,20 @@ body {
     .image-container {
         height: 160px;
     }
+    .footer{
+        font-size: 14px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
+    }
 }
 
 @media (max-width: 768px) {
@@ -480,6 +494,22 @@ body {
     
     #chatbot-icon {
         bottom: 50px;
+    }
+
+    
+    .footer{
+        font-size: 18px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
     }
 }
 
@@ -538,6 +568,22 @@ body {
         bottom: 50px;
         right: 15px;
     }
+
+    
+    .footer{
+        font-size: 18px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
+    }
 }
 
 @media (max-width: 480px) {
@@ -565,9 +611,20 @@ body {
         font-size: 12px;
     }
     
-    .footer {
-        font-size: 11px;
-        padding: 8px;
+    
+    .footer{
+        font-size: 18px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
     }
 }
 
@@ -623,8 +680,20 @@ body {
         font-size: 14px;
     }
     
-    .footer {
-        font-size: 10px;
+ 
+    .footer{
+        font-size: 18px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
     }
 }
 
