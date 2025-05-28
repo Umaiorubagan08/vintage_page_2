@@ -1,0 +1,720 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #111;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 40px; /* Space for footer */
+}
+
+.topbar {
+    background: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.welcome-heading {
+    text-align: center;
+    font-size: 15px;
+    margin: 5px 0;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+.section {
+    padding: 10px 15px;
+}
+
+.section h2 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.section h2:hover {
+    color: darkcyan;
+}
+
+/* Enhanced Modelling Section */
+#modelling {
+    width: 100%;
+}
+
+#modelling h2 {
+    position: relative;
+    top: -15px;
+}
+
+.model-boxes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.model-box {
+    position: relative;
+    top: -20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 45%;
+    min-width: 280px;
+    min-height: 300px; 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.model-box h3 {
+    margin: 5px 0 15px 0; 
+    font-size: 16px;
+}
+
+.image-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 8px;
+    flex-grow: 1;
+    position: relative;
+    left: -50px;
+}
+
+.image-item {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.image_header {
+    text-align: center;
+    position: relative;
+    left: 50px;
+}
+
+.image-container {
+    position: relative;
+    width: 150%;
+    height: 180px;
+}
+
+.plot-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/* Video hover overlay styles */
+.video-hover-overlay {
+    position: absolute;
+    top: -45%;
+    left: -50%;
+    width: 180%;
+    height: 180%;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: scale(0.5);
+    transform-origin: center center;
+    z-index: 100;
+    background: #000;
+    border-radius: 8px;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 101;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-hover-overlay:hover .video-controls {
+    opacity: 1;
+}
+
+.video-controls button {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.video-controls button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    transform: scale(1.1);
+}
+
+.image-container:hover .video-hover-overlay {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.video-hover-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.hover-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* payment Section */
+#payment_h2 {
+    position: relative;
+    top: -40px;
+}
+
+.payment-table {
+    position: relative;
+    top: -46px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    table-layout: fixed;
+}
+
+.payment-table th,
+.payment-table td {
+    border: solid #ddd;
+    padding: 2px;
+    text-align: center;
+}
+
+.payment-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+    padding: 3px 2px;
+}
+
+.payment-table input[type="date"],
+.payment-table input[type="number"] {
+    width: 90%;
+    padding: 1px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 11px;
+}
+
+.btn-yes,
+.btn-no {
+    padding: 2px 5px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 11px;
+    margin: 0 1px;
+}
+
+.btn-yes {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-no {
+    background-color: #f44336;
+    color: white;
+}
+
+.payment-table a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+/* chatbot section */
+#bot {
+    flex: 1;
+    border-top: 1px solid #ddd;
+    padding: 10px 15px;
+}
+
+#bot h2 {
+    position: relative;
+    top: -70px;
+}
+
+#bot p {
+    font-size: 13px;
+    position: relative;
+    top: -82px;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Chatbot Icon */
+#chatbot-icon {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background: linear-gradient(135deg, #6f42c1, #007bff);
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+#chatbot-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Chat Window */
+#chat-window {
+    display: none;
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    width: 320px;
+    height: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+#chat-header {
+    background: linear-gradient(to right, #007bff, #6f42c1);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+#chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f9f9f9;
+}
+
+#chat-messages div {
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 8px 10px;
+    max-width: 90%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+#chat-messages div strong {
+    display: block;
+    font-weight: bold;
+    color: #007bff;
+}
+
+#chat-input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    gap: 8px;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#chat-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#chat-input-area button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.show {
+    display: flex !important;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+    .model-box {
+        min-width: 250px;
+    }
+    
+    .image-container {
+        height: 160px;
+    }
+    .footer{
+        font-size: 14px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        padding: 8px 10px;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    .welcome-heading {
+        font-size: 14px;
+    }
+
+    .model-box {
+        min-height: 240px;
+        min-width: 100%;
+    }
+
+    .image-container {
+        height: 140px;
+    }
+
+    .video-hover-overlay {
+        height: 140px;
+    }
+
+    .payment-table {
+        font-size: 11px;
+    }
+
+    .payment-table input[type="date"],
+    .payment-table input[type="number"] {
+        font-size: 10px;
+    }
+
+    #chat-window {
+        width: 90%;
+        right: 5%;
+        height: 320px;
+        bottom: 100px;
+    }
+    
+    #chatbot-icon {
+        bottom: 50px;
+    }
+
+    
+    .footer{
+        font-size: 18px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
+    }
+}
+
+@media (max-width: 600px) {
+    .model-box {
+        min-height: 220px;
+    }
+
+    .image-container {
+        height: 120px;
+    }
+
+    .video-hover-overlay {
+        height: 120px;
+    }
+
+    .video-controls button {
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+    }
+
+    .payment-table {
+        font-size: 10px;
+    }
+
+    .btn-yes, .btn-no {
+        padding: 1px 3px;
+        font-size: 9px;
+    }
+
+    #bot p {
+        font-size: 12px;
+    }
+
+    #chat-window {
+        height: 300px;
+        width: 95%;
+        right: 2.5%;
+    }
+
+    #chat-header {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #chat-input {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    #chatbot-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        bottom: 50px;
+        right: 15px;
+    }
+
+    
+    .footer{
+        font-size: 18px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
+    }
+}
+
+@media (max-width: 480px) {
+    .model-box {
+        min-height: 200px;
+    }
+
+    .image-container {
+        height: 100px;
+    }
+
+    .video-hover-overlay {
+        height: 100px;
+    }
+
+    .payment-table {
+        font-size: 9px;
+    }
+
+    #chat-window {
+        height: 280px;
+    }
+
+    #chat-input {
+        font-size: 12px;
+    }
+    
+    
+    .footer{
+        font-size: 18px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
+    }
+}
+
+@media (max-width: 360px) {
+    .topbar {
+        padding: 5px;
+    }
+
+    .logo {
+        height: 28px;
+    }
+
+    .welcome-heading {
+        font-size: 12px;
+    }
+
+    .model-box {
+        min-height: 180px;
+    }
+
+    .image-container {
+        height: 90px;
+    }
+
+    .video-hover-overlay {
+        height: 90px;
+    }
+
+    .video-controls button {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+    }
+
+    .payment-table {
+        font-size: 8px;
+    }
+
+    .btn-yes, .btn-no {
+        padding: 1px 2px;
+        font-size: 8px;
+    }
+
+    #chat-window {
+        height: 260px;
+        width: 98%;
+        right: 1%;
+    }
+
+    #chatbot-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+    
+ 
+    .footer{
+        font-size: 18px;
+
+    }
+
+    .footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
+    }
+}
+
+@-moz-document url-prefix() {
+    #chat-messages div {
+        max-width: 85%; 
+        padding: 6px 8px; 
+        font-size: 13px; 
+        line-height: 1.3;
+    }
+    
+    #chat-input-area {
+        padding: 8px;
+    }
+    
+    #chat-input {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+    
+    .payment-table a[href*="receipts"] {
+        display: inline-block;
+    }
+}
